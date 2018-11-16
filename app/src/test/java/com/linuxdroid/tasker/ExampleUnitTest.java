@@ -1,4 +1,4 @@
-package com.termux.tasker;
+package com.linuxdroid.tasker;
 
 import org.junit.Test;
 

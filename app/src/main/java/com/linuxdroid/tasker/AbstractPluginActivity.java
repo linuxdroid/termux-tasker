@@ -1,4 +1,4 @@
-package com.termux.tasker;
+package com.linuxdroid.tasker;
 
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;

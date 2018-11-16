@@ -1,4 +1,4 @@
-package com.termux.tasker;
+package com.linuxdroid.tasker;
 
 import android.app.AlertDialog;
 import android.content.Intent;
@@ -25,7 +25,7 @@ import java.io.File;
  */
 public final class EditConfigurationActivity extends AbstractPluginActivity {
 
-    public static final File TASKER_DIR = new File("/data/data/com.termux/files/home/.termux/tasker/");
+    public static final File TASKER_DIR = new File("/data/data/com.linuxdroid/files/home/.linuxdroid/tasker/");
 
     private AutoCompleteTextView mExecutableText;
     private EditText mArgumentsText;

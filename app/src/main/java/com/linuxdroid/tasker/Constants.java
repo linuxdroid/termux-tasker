@@ -1,10 +1,10 @@
-package com.termux.tasker;
+package com.linuxdroid.tasker;
 
 import android.content.Context;
 
 public final class Constants {
 
-    public static final String LOG_TAG = "termux-tasker";
+    public static final String LOG_TAG = "linuxdroid-tasker";
 
     /**
      * Determines the "versionCode" in the {@code AndroidManifest}.

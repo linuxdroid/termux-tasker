@@ -1,4 +1,4 @@
-package com.termux.tasker;
+package com.linuxdroid.tasker;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -14,21 +14,21 @@ final class PluginBundleManager {
      *
      * The arguments to pass to the script.
      */
-    public static final String EXTRA_ARGUMENTS = "com.termux.execute.arguments";
+    public static final String EXTRA_ARGUMENTS = "com.linuxdroid.execute.arguments";
 
     /**
      * Type: {@code String}.
      *
      * The path to the executable to execute.
      */
-    public static final String EXTRA_EXECUTABLE = "com.termux.tasker.extra.EXECUTABLE";
+    public static final String EXTRA_EXECUTABLE = "com.linuxdroid.tasker.extra.EXECUTABLE";
 
     /**
      * Type: {@code boolean}.
      *
      * If the executable should be run inside a terminal.
      */
-    public static final String EXTRA_TERMINAL = "com.termux.tasker.extra.TERMINAL";
+    public static final String EXTRA_TERMINAL = "com.linuxdroid.tasker.extra.TERMINAL";
 
     /**
      * Type: {@code int}.
@@ -39,7 +39,7 @@ final class PluginBundleManager {
      * easier. For example, suppose a bug is found in how some version of the plug-in stored its Bundle. By
      * having the version, the plug-in can better detect when such bugs occur.
      */
-    public static final String BUNDLE_EXTRA_INT_VERSION_CODE = "com.termux.tasker.extra.VERSION_CODE";
+    public static final String BUNDLE_EXTRA_INT_VERSION_CODE = "com.linuxdroid.tasker.extra.VERSION_CODE";
 
     /**
      * Method to verify the content of the bundle are correct.

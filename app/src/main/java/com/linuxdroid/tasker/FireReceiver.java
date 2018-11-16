@@ -1,4 +1,4 @@
-package com.termux.tasker;
+package com.linuxdroid.tasker;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -20,8 +20,8 @@ import java.util.regex.Pattern;
  */
 public final class FireReceiver extends BroadcastReceiver {
 
-    public static final String TERMUX_SERVICE = "com.termux.app.TermuxService";
-    public static final String ACTION_EXECUTE = "com.termux.service_execute";
+    public static final String LINUXDROID_SERVICE = "com.linuxdroid.app.LinuxdroidService";
+    public static final String ACTION_EXECUTE = "com.linuxdroid.service_execute";
 
     public void onReceive(final Context context, final Intent intent) {
         if (!com.twofortyfouram.locale.Intent.ACTION_FIRE_SETTING.equals(intent.getAction())) {
@@ -46,18 +46,18 @@ public final class FireReceiver extends BroadcastReceiver {
 
         File executableFile = new File(EditConfigurationActivity.TASKER_DIR, executable);
         if (!executableFile.isFile()) {
-            String message = "Termux:Tasker - no such executable:\n" + executable;
+            String message = "Linuxdroid:Tasker - no such executable:\n" + executable;
             Toast.makeText(context, message, Toast.LENGTH_LONG).show();
             return;
         }
 
         ensureFileReadableAndExecutable(executableFile);
-        Uri scriptUri = new Uri.Builder().scheme("com.termux.file").path(executableFile.getAbsolutePath()).build();
+        Uri scriptUri = new Uri.Builder().scheme("com.linuxdroid.file").path(executableFile.getAbsolutePath()).build();
 
-        // Note: Must match TermuxService#ACTION_EXECUTE constant:
+        // Note: Must match LinuxdroidService#ACTION_EXECUTE constant:
         Intent executeIntent = new Intent(ACTION_EXECUTE, scriptUri);
-        executeIntent.setClassName("com.termux", TERMUX_SERVICE);
-        if (!inTerminal) executeIntent.putExtra("com.termux.execute.background", true);
+        executeIntent.setClassName("com.linuxdroid", LINUXDROID_SERVICE);
+        if (!inTerminal) executeIntent.putExtra("com.linuxdroid.execute.background", true);
         executeIntent.putExtra(PluginBundleManager.EXTRA_ARGUMENTS, list.toArray(new String[list.size()]));
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
